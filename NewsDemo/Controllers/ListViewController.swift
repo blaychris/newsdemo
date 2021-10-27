@@ -78,6 +78,7 @@ class ListViewController: UITableViewController {
             leftNavigationLabel.text = Constants.NavCaptionAmerica
             activeURL = URL(string: Constants.URLAmerica)!
         }
+        leftNavigationLabel.sizeToFit()
         
         UserDefaults.standard.set((navigationItem.rightBarButtonItem?.title == Constants.NavIconAmerica), forKey: Constants.isUSSource)
         
