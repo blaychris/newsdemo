@@ -151,7 +151,6 @@
 		0291C8A92728B76300CE3BF5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				0291C8AF272911FE00CE3BF5 /* GoogleService-Info.plist */,
 				0291C8AA2728B77100CE3BF5 /* Constants */,
 			);
 			path = "Supporting Files";
@@ -202,6 +201,7 @@
 				02B99B432727A7AD00ABCC95 /* Assets.xcassets */,
 				02B99B452727A7AD00ABCC95 /* LaunchScreen.storyboard */,
 				02B99B482727A7AD00ABCC95 /* Info.plist */,
+				0291C8AF272911FE00CE3BF5 /* GoogleService-Info.plist */,
 				02B99B402727A7AB00ABCC95 /* NewsDemo.xcdatamodeld */,
 			);
 			path = NewsDemo;
@@ -234,7 +234,6 @@
 				2029278F1EAC417F9B2FED89 /* Pods-NewsDemoTests.debug.xcconfig */,
 				B80293F219557DDF6D94D76F /* Pods-NewsDemoTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

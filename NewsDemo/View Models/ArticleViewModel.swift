@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseDatabase
 
 struct ArticleListViewModel{
     let articles: [Article]
@@ -66,6 +67,13 @@ extension ArticleViewModel {
     var publishedAt: String {
         return self.article.publishedAt!
     }
+    
+    var isFavorite: Bool{
+        var isFav: Bool = true
+        
+        return isFav
+    }
+    
 //    var author: String {
 //        if self.article.author == nil {
 //            return ""

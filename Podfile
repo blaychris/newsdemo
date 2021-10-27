@@ -8,6 +8,9 @@ target 'NewsDemo' do
   # Pods for NewsDemo
 
 pod 'Firebase/Analytics'
+pod 'Firebase/Database'
+pod 'Firebase/Auth'
+pod 'Firebase/Core'
 
   target 'NewsDemoTests' do
     inherit! :search_paths

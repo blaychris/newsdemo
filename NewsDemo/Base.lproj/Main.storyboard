@@ -59,16 +59,29 @@
                                                 </label>
                                             </subviews>
                                         </stackView>
+                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="▼" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qx0-33-ERB">
+                                            <rect key="frame" x="399" y="0.0" width="35" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="35" id="GNA-x6-24g"/>
+                                                <constraint firstAttribute="height" constant="25" id="cKA-mW-CEw"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Kr9-Od-KLA" firstAttribute="top" secondItem="PmY-PJ-OKK" secondAttribute="topMargin" id="4hF-zs-hoo"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Kr9-Od-KLA" secondAttribute="bottom" id="HOE-Bc-JW1"/>
                                         <constraint firstItem="Kr9-Od-KLA" firstAttribute="leading" secondItem="PmY-PJ-OKK" secondAttribute="leadingMargin" id="S4W-aH-4i4"/>
+                                        <constraint firstAttribute="trailing" secondItem="Qx0-33-ERB" secondAttribute="trailing" constant="-20" id="k5q-jw-UcR"/>
+                                        <constraint firstItem="Qx0-33-ERB" firstAttribute="top" secondItem="PmY-PJ-OKK" secondAttribute="top" id="niw-8Y-fDh"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Kr9-Od-KLA" secondAttribute="trailing" id="s7W-sC-FtH"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="descriptionLabel" destination="yeF-Cj-cJY" id="cr9-vk-ggk"/>
+                                    <outlet property="labelFavorite" destination="Qx0-33-ERB" id="IWr-Xu-GMx"/>
                                     <outlet property="titleLabel" destination="yHN-R9-R3S" id="MAH-Kr-iqs"/>
                                 </connections>
                             </tableViewCell>
@@ -87,7 +100,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="epX-Q6-q2X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="793" y="108"/>
+            <point key="canvasLocation" x="792.75362318840587" y="107.60869565217392"/>
         </scene>
         <!--Article Detail View Controller-->
         <scene sceneID="2Sx-sP-B8z">

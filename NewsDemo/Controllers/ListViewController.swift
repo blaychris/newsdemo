@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseDatabase
 import UIKit
 
 class ListViewController: UITableViewController {
@@ -14,12 +15,15 @@ class ListViewController: UITableViewController {
     private var articleListVM: ArticleListViewModel!
     private var activeURL: URL!
     
-    override func viewDidLoad() {
+    override func viewDidLoad()  {
         super.viewDidLoad()
         setup()
+
     }
     
-    private func setup(){
+    private func setup() {
+        
+        
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action:  #selector(refreshData), for: .valueChanged)
         tableView.addSubview(refreshControl)
@@ -101,10 +105,29 @@ class ListViewController: UITableViewController {
             fatalError("ArticleTableViewCell not found")
         }
         
+      
+        
         let articleVM = self.articleListVM.articleAtIndex(indexPath.row)
+        
+        let ref = Database.database().reference()
+        ref.child("favorites").observeSingleEvent(of: .value, with: { (snapshot) in
+
+            if snapshot.hasChild(articleVM.publishedAt){
+
+                cell.labelFavorite.isHidden = false
+
+             }else{
+
+                 cell.labelFavorite.isHidden = true
+             }
+
+
+         })
         
         cell.titleLabel.text = articleVM.title
         cell.descriptionLabel.text = articleVM.description
+
+//        articleVM.isFavorite
 //        cell.descriptionLabel.text = articleVM.author
         return cell
     }
@@ -117,7 +140,13 @@ class ListViewController: UITableViewController {
         detailViewController.titleLabel.text = articleVM.title
         detailViewController.descriptionLabel.text = articleVM.description
         detailViewController.authorLabel.text = articleVM.author
-        detailViewController.publishedLabel.text = articleVM.publishedAt
+        let dateFormatter = ISO8601DateFormatter()
+        let date = dateFormatter.date(from:articleVM.publishedAt)!
+        let dateFormatter2 = DateFormatter()
+        dateFormatter2.dateFormat = "MMM dd, yyyy hh:mma"
+        detailViewController.publishedLabel.text = dateFormatter2.string(from: date)
+        detailViewController.datemark = articleVM.publishedAt
+        detailViewController.sourcemark = navigationItem.rightBarButtonItem?.title
         self.navigationController?.pushViewController(detailViewController, animated:true)
     }
     

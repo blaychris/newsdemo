@@ -57,14 +57,9 @@ struct Article: Codable {
         }
         
         do{
-            let isoDate = try values.decode(String.self, forKey: .publishedAt)
+            publishedAt = try values.decode(String.self, forKey: .publishedAt)
 
-            let dateFormatter = ISO8601DateFormatter()
-            let date = dateFormatter.date(from:isoDate)!
-            let dateFormatter2 = DateFormatter()
-            dateFormatter2.dateFormat = "MMM dd, yyyy hh:mma"
-
-            publishedAt = dateFormatter2.string(from: date)
+            
         }  catch DecodingError.valueNotFound(let type, let context) {
             publishedAt = " "
         }

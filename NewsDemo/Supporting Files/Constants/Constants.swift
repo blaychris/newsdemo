@@ -16,6 +16,8 @@ struct Constants {
     
     static let NavIconAmerica =  "🇺🇸"
     static let NavIconCanada =  "🇨🇦"
+    static let NavIconNewsFavorite =  "❤️"
+    static let NavIconNewsNormal =  "🤍"
     
     static let isUSSource =  "isUSSource"
 }
